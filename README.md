@@ -5,6 +5,7 @@ Implementation of logistic regression from scratch to predict heart disease risk
 
 ## Dataset
 - **Source**: Heart Disease Prediction Dataset (Kaggle)
+- **Samples**: 270 records
 - **Features**: 6 selected features (Age, Cholesterol, BP, Max HR, ST depression, Number of vessels fluro)
 - **Target**: Binary classification (Presence/Absence of heart disease)
 
@@ -22,15 +23,20 @@ jupyter
 1. Open `Heart_Disease_Prediction.ipynb` in Jupyter Notebook
 2. Run all cells sequentially
 
-## Implementation
-- Sigmoid function
-- Binary cross-entropy cost function
-- Gradient descent optimization
-- Training with α = 0.01, 2000 iterations
-- 70/30 train/test split (stratified)
+## Current Implementation
 
-## Results
-- Model performance metrics (Accuracy, Precision, Recall, F1-Score)
-- Cost vs iterations visualization
-- Confusion matrices
-- Feature importance analysis
+### Step 1: Load and Prepare the Dataset
+- Dataset loading and exploration
+- Target variable binarization (Presence → 1, Absence → 0)
+- Exploratory Data Analysis (EDA)
+- Feature selection (6 features)
+- Class distribution visualization
+- Correlation analysis
+
+### Step 2: Implement Basic Logistic Regression
+- **Sigmoid function**: Activation function implementation
+- **Cost function**: Binary cross-entropy (log loss) computation
+- **Gradient computation**: Calculation of weight and bias gradients
+- **Gradient Descent**: Optimization algorithm with cost tracking
+
+All functions are implemented from scratch using NumPy (no scikit-learn for core training logic).
