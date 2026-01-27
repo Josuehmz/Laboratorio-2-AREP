@@ -5,7 +5,6 @@ Implementation of logistic regression from scratch to predict heart disease risk
 
 ## Dataset
 - **Source**: Heart Disease Prediction Dataset (Kaggle)
-- **Samples**: 270 records
 - **Features**: 6 selected features (Age, Cholesterol, BP, Max HR, ST depression, Number of vessels fluro)
 - **Target**: Binary classification (Presence/Absence of heart disease)
 
