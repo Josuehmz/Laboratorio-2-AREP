@@ -39,4 +39,16 @@ jupyter
 - **Gradient computation**: Calculation of weight and bias gradients
 - **Gradient Descent**: Optimization algorithm with cost tracking
 
-All functions are implemented from scratch using NumPy (no scikit-learn for core training logic).
+#### Training
+- **Data split**: Stratified 70/30 train/test split
+- **Feature normalization**: StandardScaler for numerical features
+- **Parameter initialization**: Weights and bias initialized to zero
+- **Model training**: 
+  - Learning rate (α) = 0.01
+  - 2000 iterations (1000+)
+  - Training on full training set
+  - Cost tracking during optimization
+- **Cost visualization**: Plot of cost vs iterations showing convergence
+
+
+
