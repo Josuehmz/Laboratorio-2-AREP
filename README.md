@@ -89,10 +89,3 @@ jupyter
 
   ![AccessDeniedException when creating endpoint configuration](img/error.png)
 
----## Reporting summary
-- **Step 2**: Cost curve, metrics, feature-weights bar plot, interpretation.
-- **Step 3**: ≥3 decision-boundary plots + markdown insights per pair (separability/nonlinearity).
-- **Step 4**: λ–metrics table, printed optimal-λ sentence, cost and boundary plots (unreg vs reg) for one pair.
-- **Step 5**: SageMaker deployment attempt (export + package + inference); I did not complete deployment due to insufficient permissions; see images in Step 5 above.
-
----
