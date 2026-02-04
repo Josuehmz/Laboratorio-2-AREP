@@ -71,11 +71,28 @@ jupyter
   - **Plots**: (1) Cost vs iteration (unreg vs reg); (2) Decision boundaries (unreg vs reg) with scatter of true labels.
 - **Markdown**: Short summary of reporting and the “Optimal λ improves [metric] by [val]%” conclusion; note that smaller ‖w‖ with regularization indicates smaller coefficients and less overfitting.
 
----
+### Step 5: SageMaker Deployment Attempt
+- I attempted to deploy the model to **AWS SageMaker**:
+  1. **Export**: I export model artifacts (weights `w`, bias `b`, scaler, and feature list) to `model_export/`.
+  2. **Package**: I package the inference script (`inference.py`) together with those artifacts into `model.tar.gz` in the format SageMaker expects (folder `code/` with `inference.py` and model files).
+  3. **Upload to S3**: I upload the `model.tar.gz` file to an S3 bucket and register the model in SageMaker with the scikit-learn container image and artifact location.
 
-## Reporting summary
+  ![S3 bucket with model.tar.gz](img/tar.png)
+
+  ![Heart-disease model configuration in SageMaker](img/model.png)
+  
+  I only uploaded the notebook in SageMaker Studio without any endpoint.
+  
+  ![SageMaker Studio — model in the cloud without endpoints](img/sagemaker.png)
+
+- **Result**: **I could not complete the deployment due to insufficient permissions**. When I tried to create the endpoint configuration in the SageMaker console, the lab IAM policy explicitly denied the action `sagemaker:CreateEndpointConfig`.
+
+  ![AccessDeniedException when creating endpoint configuration](img/error.png)
+
+---## Reporting summary
 - **Step 2**: Cost curve, metrics, feature-weights bar plot, interpretation.
 - **Step 3**: ≥3 decision-boundary plots + markdown insights per pair (separability/nonlinearity).
 - **Step 4**: λ–metrics table, printed optimal-λ sentence, cost and boundary plots (unreg vs reg) for one pair.
+- **Step 5**: SageMaker deployment attempt (export + package + inference); I did not complete deployment due to insufficient permissions; see images in Step 5 above.
 
-
+---
